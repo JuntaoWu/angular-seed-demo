@@ -25,9 +25,23 @@ angular.module('myApp.upload', ['ngRoute', 'angularFileUpload'])
         //uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
         //    console.info('onWhenAddingFileFailed', item, filter, options);
         //};
+        
+        uploader.filters.push({
+            name: 'customFilter',
+            fn: function (item /*{File|FileLikeObject}*/, options) {
+                var contains = this.queue.filter(function (i) {
+                    return i.file.name == item.name;
+                });
+                return !contains || !contains.length;
+            }
+        });
+
         uploader.onAfterAddingFile = function (fileItem) {
             console.info('onAfterAddingFile', fileItem);
             $scope.currentFile = fileItem.name;
+            
+            //Todo: Clear the val of input[file] in the angular way.
+            $("input[type=file]").val("");
         };
         //uploader.onAfterAddingAll = function (addedFileItems) {
         //    console.info('onAfterAddingAll', addedFileItems);
