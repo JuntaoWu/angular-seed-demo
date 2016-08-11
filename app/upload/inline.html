@@ -1,0 +1,54 @@
+﻿
+<form class="panel-default form-horizontal" style="border: 1px solid #ccc;">
+    <div class="form-group">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="50%">Name</th>
+                    <th ng-show="uploader.isHTML5">Size</th>
+                    <th ng-show="uploader.isHTML5">Progress</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in uploader.queue">
+                    <td><strong class="ng-binding">{{item.url || item.file.name}}</strong></td>
+                    <td class="ng-binding" nowrap="" ng-show="uploader.isHTML5">{{(item.file.size / 1024 / 1024).toFixed(2)}}MB</td>
+                    <td ng-show="uploader.isHTML5">
+                        <div class="progress" style="margin-bottom: 0;">
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" ng-style="{ 'width': item.progress + '%' }"></div>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <span style="display: none;" ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                        <span style="display: none;" ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                        <span style="display: none;" ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                    </td>
+                    <td nowrap="">
+                        <button class="btn btn-success btn-xs" type="button" ng-disabled="item.isReady || item.isUploading || item.isSuccess" ng-click="item.upload()">
+                            <span class="glyphicon glyphicon-upload"></span>
+                        </button>
+                        <button disabled="disabled" class="btn btn-warning btn-xs" type="button" ng-disabled="!item.isUploading" ng-click="item.cancel()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>
+                        </button>
+                        <button class="btn btn-danger btn-xs" type="button" ng-click="item.remove()">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="currentFile" />
+            <label class="input-group-addon" style="cursor: pointer;">
+                upload
+                <input name="file" type="file" style="display: none;" uploader="uploader" nv-file-select>
+            </label>
+        </div>
+    </div>
+
+
+</form>

@@ -1,0 +1,198 @@
+﻿
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/" style="padding: 0; margin: 0"><img src="/images/LOGO.png" style="height: 50px; margin: 0;" alt="世谦旅游管理系统" /></a>
+    </div>
+    <!-- /.navbar-header -->
+    <div class="nav  col-xs-5 col-xs-offset-1" style="margin-top: 15px;">
+        <span class="label label-success hidden" id="sPendingAuditOrderTip">有待审核的团单</span>
+        <span class="label label-success hidden " id="sPendingAuditOrderFlightFeeTip">有待审核的机票款申请</span>
+        <span class="label label-success hidden " id="sPendingAuditOrderRebateTip">有待审核的返佣申请</span>
+    </div>
+
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+            <span id="sUserName"></span>
+            <span id="sJobTitle"></span>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li>
+                    <a href="javascript:void(0);" (click)="openChangePassword()"><i class="fa fa-user fa-fw"></i> 修改密码</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <!--<li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </li>-->
+                <!-- 公司信息设置-->
+                <li>
+                    <!--<a [routerLink]="['/Home']"><i class="fa fa-dashboard fa-fw"></i>公司信息</a>-->
+                    <a href="#"><i class="fa fa-building"></i> Upload<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a ng-href="#!/upload/inline"><i class="fa fa-user"></i> Inline Upload</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/DepartmentList']"><i class="fa fa-user"></i> 部门管理</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/RoleList']"><i class="fa fa-user"></i> 角色管理</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 基础数据设置-->
+                <li>
+                    <a href="#"><i class="fa fa-database"></i> 基础数据设置<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a [routerLink]="['/CustomerList']"><i class="fa fa-child"></i> 客户管理</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/VendorList']"><i class="fa fa-archive"></i> 供应商管理</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/IndependentList']"><i class="fa fa-bus"></i> 散客线路模板</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/GroupTemplateList']"><i class="fa fa-bus"></i> 团队线路路模板</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 计调操作-->
+                <li>
+                    <a href="#"><i class="fa fa-database"></i> 计调操作<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a [routerLink]="['/NewOrder']"><i class="fa fa-child"></i> 新建团单</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/OrderList']"><i class="fa fa-archive"></i> 团单列表</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/ProposeAirFareList']"><i class="fa fa-archive"></i> 机票款申请</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/ProposeRebateList',{history:'current'}]"><i class="fa fa-archive"></i> 返佣申请</a>
+                        </li>
+                        <!--<li>
+                            <a [routerLink]="['/OrderPriceInfoList']"><i class="fa fa-archive"></i> 团队报价</a>
+                        </li>-->
+                        <li>
+                            <a [routerLink]="['/OrderFeeRemindList',{history:'current'}]"><i class="fa fa-archive"></i> 团款提醒</a>
+                        </li>
+                        <!--<li>
+                            <a [routerLink]="['/GroundFareDetailList']"><i class="fa fa-archive"></i> 地接款明细</a>
+                        </li>-->
+                        <!--<li>
+                            <a [routerLink]="['/OrderSettlementList']"><i class="fa fa-archive"></i> 团单结算</a>
+                        </li>-->
+                        <li>
+                            <a [routerLink]="['/RebateDetailList',{history:'current'}]"><i class="fa fa-archive"></i> 返佣明细</a>
+                        </li>
+                        <!--<li>
+                            <a [routerLink]="['/FerryFareRemindList']"><i class="fa fa-archive"></i> 接送费提醒</a>
+                        </li>-->
+                    </ul>
+                </li>
+                <!-- 审核-->
+                <li>
+                    <a href="#"><i class="fa fa-database"></i> 财务审核<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a [routerLink]="['/PendingAuditOrderList',{history:'current'}]"><i class="fa fa-child"></i> 团单审核</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/PendingAuditOrderRebateList',{history:'current'}]"><i class="fa fa-archive"></i> 返佣申请审核</a>
+                        </li>
+                        <!--<li>
+                            <a [routerLink]="['/PendingAuditOrderFlightApplicationsList',{history:'current'}]"><i class="fa fa-archive"></i> 机票款申请审核</a>
+                        </li>-->
+                        <li>
+                            <a [routerLink]="['/PendingAuditFlightChargeList']"><i class="fa fa-archive"></i> 机票款申请审核</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 业务管理-->
+                <li>
+                    <a href="#"><i class="fa fa-database"></i> 业务管理<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a [routerLink]="['/BusinessCustomerList']"><i class="fa fa-child"></i> 业务客户</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/BusinessLogList']"><i class="fa fa-archive"></i> 业务日志</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/BusinessLogViewList']"><i class="fa fa-archive"></i> 日志查看</a>
+                        </li>
+                        <!--<li>
+                            <a [routerLink]="['/BusinessOrderList']"><i class="fa fa-archive"></i> 业务团单</a>
+                        </li>-->
+                    </ul>
+                </li>
+                <!-- 查询统计-->
+                <li>
+                    <a href="#"><i class="fa fa-database"></i> 查询统计<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <!--<li>
+                            <a [routerLink]="['/OrderPriceDetailList']"><i class="fa fa-child"></i> 报价明细</a>
+                        </li>-->
+                        <li>
+                            <a [routerLink]="['/CompanyOrderGroupList',{history:'current'}]"><i class="fa fa-archive"></i> 分公司团队</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/CompanyOrderIndependentList',{history:'current'}]"><i class="fa fa-archive"></i> 分公司散客</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/AllCompanyOrderGroupList',{history:'current'}]"><i class="fa fa-archive"></i> 全公司团队</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/AllCompanyOrderIndependentList',{history:'current'}]"><i class="fa fa-archive"></i> 全公司散客</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/LogList']"><i class="fa fa-archive"></i> 登录IP查询</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-database"></i> 帮助<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a target="_blank" href="../images/introduce.gif"><i class="fa fa-archive"></i> 系统简介</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="../images/howdo.jpg"><i class="fa fa-archive"></i> 操作流程</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
+
+
