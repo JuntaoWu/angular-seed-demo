@@ -16,6 +16,17 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="app\bower_components\angular-file-upload\.babelrc" />
+    <Content Include="app\bower_components\angular-file-upload\.bower.json" />
+    <Content Include="app\bower_components\angular-file-upload\.gitignore" />
+    <Content Include="app\bower_components\angular-file-upload\.jshintrc" />
+    <Content Include="app\bower_components\angular-file-upload\bower.json" />
+    <Content Include="app\bower_components\angular-file-upload\dist\angular-file-upload.js.map" />
+    <Content Include="app\bower_components\angular-file-upload\dist\angular-file-upload.min.js.map" />
+    <Content Include="app\bower_components\angular-file-upload\license.txt" />
+    <Content Include="app\bower_components\angular-file-upload\package.json" />
+    <Content Include="app\bower_components\angular-file-upload\README.md" />
+    <Content Include="app\bower_components\angular-file-upload\src\config.json" />
     <Content Include="app\bower_components\bootstrap-social\.bower.json" />
     <Content Include="app\bower_components\bootstrap-social\.editorconfig" />
     <Content Include="app\bower_components\bootstrap-social\.gitignore" />
@@ -547,6 +558,22 @@
     <Content Include="global.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Compile Include="app\bower_components\angular-file-upload\dist\angular-file-upload.js" />
+    <Compile Include="app\bower_components\angular-file-upload\dist\angular-file-upload.min.js" />
+    <Compile Include="app\bower_components\angular-file-upload\gulpfile.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\directives\FileDrop.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\directives\FileOver.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\directives\FileSelect.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\index.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileDirective.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileDrop.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileItem.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileLikeObject.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileOver.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileSelect.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\services\FileUploader.js" />
+    <Compile Include="app\bower_components\angular-file-upload\src\values\options.js" />
+    <Compile Include="app\bower_components\angular-file-upload\WebpackConfig.js" />
     <Compile Include="app\bower_components\bootstrap\dist\js\bootstrap.js" />
     <Compile Include="app\bower_components\bootstrap\dist\js\bootstrap.min.js" />
     <Compile Include="app\bower_components\bootstrap\dist\js\npm.js" />
@@ -850,6 +877,7 @@
     <Compile Include="app\components\common\elem-directive.js" />
     <Compile Include="app\nav\nav-controller.js" />
     <Compile Include="app\upload\inline-controller.js" />
+    <Compile Include="app\upload\inline-service.js" />
     <Compile Include="karma.conf.js" />
     <Content Include="app\index-async.html" />
     <Content Include="app\index.html" />
@@ -963,6 +991,12 @@
     <Folder Include="app" />
     <Folder Include="app\bower_components" />
     <Folder Include="app\bower_components\angular" />
+    <Folder Include="app\bower_components\angular-file-upload\" />
+    <Folder Include="app\bower_components\angular-file-upload\dist\" />
+    <Folder Include="app\bower_components\angular-file-upload\src\" />
+    <Folder Include="app\bower_components\angular-file-upload\src\directives\" />
+    <Folder Include="app\bower_components\angular-file-upload\src\services\" />
+    <Folder Include="app\bower_components\angular-file-upload\src\values\" />
     <Folder Include="app\bower_components\angular-loader" />
     <Folder Include="app\bower_components\angular-mocks" />
     <Folder Include="app\bower_components\angular-route" />

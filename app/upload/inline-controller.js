@@ -9,7 +9,12 @@ angular.module('myApp.upload', ['ngRoute', 'angularFileUpload'])
         });
     }])
 
-.controller('inlineCtrl', ['$scope', 'FileUploader', function ($scope, FileUploader) {
+.controller('inlineCtrl', ['$scope', 'FileUploader', 'inlineService', function ($scope, FileUploader, inlineService) {
+        
+        inlineService.getQiniuToken().then(function (token) {
+            $scope.token = token;
+        });
+        
         var uploader = $scope.uploader = new FileUploader({
             url: 'http://upload.qiniu.com',
             autoUpload: true
@@ -29,7 +34,7 @@ angular.module('myApp.upload', ['ngRoute', 'angularFileUpload'])
         };
         uploader.onBeforeUploadItem = function (item) {
             console.info('onBeforeUploadItem', item);
-            item.formData.push({ token: "JOiPUijNB0t8vbNKIufpn5gDKmg0G-uFHBlrQoV2:WyMZ7OcFC6jRKKCv8bHEAGMVtvw=:eyJzY29wZSI6Impzc2RrIiwiZGVhZGxpbmUiOjE0NzA4NzYwOTl9" });
+            item.formData.push({ token: $scope.token });
             item.formData.push({ key: item.file.name });
         };
         uploader.onProgressItem = function (fileItem, progress) {
