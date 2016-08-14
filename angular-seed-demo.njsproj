@@ -538,6 +538,15 @@
     <Content Include="app\bower_components\morrisjs\spec\viz\exemplary\stacked_bar0.png" />
     <Content Include="app\bower_components\morrisjs\spec\viz\run.sh" />
     <Content Include="app\bower_components\morrisjs\spec\viz\test.html" />
+    <Content Include="app\bower_components\ng-repeat-n\.bower.json" />
+    <Content Include="app\bower_components\ng-repeat-n\bower.json" />
+    <Content Include="app\bower_components\ng-repeat-n\CHANGELOG.md" />
+    <Content Include="app\bower_components\ng-repeat-n\CONTRIBUTING.md" />
+    <Content Include="app\bower_components\ng-repeat-n\example\index.html" />
+    <Content Include="app\bower_components\ng-repeat-n\LICENSE" />
+    <Content Include="app\bower_components\ng-repeat-n\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="app\bower_components\ng-repeat-n\README.md" />
+    <Content Include="app\bower_components\ng-repeat-n\typings.json" />
     <Content Include="app\bower_components\raphael\.bower.json" />
     <Content Include="app\bower_components\raphael\bower.json" />
     <Content Include="app\bower_components\raphael\dev\banner.txt" />
@@ -861,6 +870,8 @@
     <Compile Include="app\bower_components\morrisjs\morris.min.js" />
     <Compile Include="app\bower_components\morrisjs\spec\viz\examples.js" />
     <Compile Include="app\bower_components\morrisjs\spec\viz\visual_specs.js" />
+    <Compile Include="app\bower_components\ng-repeat-n\bower\ng-repeat-n.js" />
+    <Compile Include="app\bower_components\ng-repeat-n\bower\ng-repeat-n.min.js" />
     <Compile Include="app\bower_components\raphael\dev\raphael.amd.js" />
     <Compile Include="app\bower_components\raphael\dev\raphael.core.js" />
     <Compile Include="app\bower_components\raphael\dev\raphael.svg.js" />
@@ -1155,6 +1166,9 @@
     <Folder Include="app\bower_components\morrisjs\spec\support\" />
     <Folder Include="app\bower_components\morrisjs\spec\viz\" />
     <Folder Include="app\bower_components\morrisjs\spec\viz\exemplary\" />
+    <Folder Include="app\bower_components\ng-repeat-n\" />
+    <Folder Include="app\bower_components\ng-repeat-n\bower\" />
+    <Folder Include="app\bower_components\ng-repeat-n\example\" />
     <Folder Include="app\bower_components\raphael\" />
     <Folder Include="app\bower_components\raphael\dev\" />
     <Folder Include="app\bower_components\raphael\dev\test\" />

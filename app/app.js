@@ -8,7 +8,8 @@ angular.module('myApp', [
     'myApp.upload',
     'myApp.nav',
     'myApp.version',
-    'myApp.common'
+    'myApp.common',
+    'angular-repeat-n'
 ]).
 config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
