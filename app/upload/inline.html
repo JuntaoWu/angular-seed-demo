@@ -13,7 +13,10 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in uploader.queue">
-                    <td><strong class="ng-binding">{{item.url || item.file.name}}</strong></td>
+                    <td ng-hide="item.url"><strong class="ng-binding">{{item.file.name}}</strong></td>
+                    <td ng-show="item.url">
+                        <video style="width: 100%;" controls ng-src="{{trustUrl(item.url)}}"></video>
+                    </td>
                     <td class="ng-binding" nowrap="" ng-show="uploader.isHTML5">{{(item.file.size / 1024 / 1024).toFixed(2)}}MB</td>
                     <td ng-show="uploader.isHTML5">
                         <div class="progress" style="margin-bottom: 0;">

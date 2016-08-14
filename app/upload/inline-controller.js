@@ -9,7 +9,7 @@ angular.module('myApp.upload', ['ngRoute', 'angularFileUpload'])
         });
     }])
 
-.controller('inlineCtrl', ['$scope', 'FileUploader', 'inlineService', function ($scope, FileUploader, inlineService) {
+.controller('inlineCtrl', ['$scope', 'FileUploader', 'inlineService', '$sce', function ($scope, FileUploader, inlineService, $sce) {
         
         inlineService.getQiniuToken().then(function (token) {
             $scope.token = token;
@@ -25,6 +25,10 @@ angular.module('myApp.upload', ['ngRoute', 'angularFileUpload'])
         //uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
         //    console.info('onWhenAddingFileFailed', item, filter, options);
         //};
+        
+        $scope.trustUrl = function (url) {
+            return $sce.trustAsResourceUrl(url);
+        };
         
         uploader.filters.push({
             name: 'customFilter',

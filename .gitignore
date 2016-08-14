@@ -6,3 +6,5 @@ tmp
 .DS_Store
 .idea
 /.ntvs_analysis.dat.tmp
+/.vs/angular-seed-demo/v14/.suo
+/.ntvs_analysis.dat
